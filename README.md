@@ -1,16 +1,12 @@
-# co2509_assignment_movie_app
+# CO2509: Flutter Movie Catalogue App
+![Frame 26](https://github.com/limarkdl/co2509-assignment-movie-app/assets/116545670/19011f22-89d0-4ba0-87ec-0135dba5d101)
 
-A new Flutter project.
 
-## Getting Started
+This is the assignment for CO2509: Mobile Computing where I'm supposed to develop a Flutter application and its design from the scratch. I'm using/going to use such libraries: dio (http requests), ant design (UI), 'battery', 'flutter_test', 'geolocator', 'redux', 'animations', etc. (may be expanded)
 
-This project is a starting point for a Flutter application.
+## Prototyping / Designing
 
-A few resources to get you started if this is your first Flutter project:
+Using figma for creating design schema and logo:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Some old sketches from my notebook:
+![изображение](https://github.com/limarkdl/co2509-assignment-movie-app/assets/116545670/c833ee73-d8ab-49ea-bbfe-fc89b20905aa)
