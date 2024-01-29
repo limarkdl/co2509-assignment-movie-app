@@ -7,6 +7,8 @@ This is the assignment for CO2509: Mobile Computing where I'm supposed to develo
 
 ## Prototyping / Designing
 
+[> FIGMA FILE <](https://www.figma.com/file/cevXvEghtrF2Ufd6vuMxuq/MOVIE_SHARK?type=design&node-id=0%3A1&mode=design&t=Epk05VRcnT6TW5MA-1)
+
 Using figma for creating unique design schema and my own logo, inspired by sharks and calm/friendly colors:
 
 
