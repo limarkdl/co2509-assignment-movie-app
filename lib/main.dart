@@ -7,56 +7,123 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DuckMovie',
-
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.purple,
-            brightness: Brightness.dark,
-          ),
+      title: 'Movie Shark',
+      theme: ThemeData.dark().copyWith(
+        bottomAppBarColor: Color(0xFF011719),
+         colorScheme: const ColorScheme.light(
+          primary: Color(0xFF011719),
+          onPrimary: Colors.white,
+          background: Color(0xFF011719),
+          surface: Color(0xFF011719),
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFF011719),
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white30,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          elevation: 0,
+        ),
       ),
-      home: const MyHomePage(title: 'DuckMovie'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _currentIndex = 0;
 
-  void _incrementCounter() {
+  void _onItemTapped(int index) {
     setState(() {
-      _counter++;
+      _currentIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+      backgroundColor: const Color(0xFF011719),
+      body: Column(
+        children: <Widget>[
+          Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.symmetric(vertical: 36.0),
+            height: 52.0,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              children: const <Widget>[
+                Align(
+                  alignment: Alignment.center,
+                  child: Image(image: AssetImage('assets/Logo.png'), width: 36,),
+                ),
+                SizedBox(width: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text('FOR YOU', style: TextStyle(fontSize: 24, fontFamily: 'Unbounded'),),
+                ),
+                SizedBox(width: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text('Watching Now', style: TextStyle(fontSize: 16, fontFamily: 'Unbounded', color: Colors.white30),),
+                ),
+                SizedBox(width: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text('New', style: TextStyle(fontSize: 16, fontFamily: 'Unbounded', color: Colors.white30),),
+                ),
+                SizedBox(width: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text('TOP-250', style: TextStyle(fontSize: 16, fontFamily: 'Unbounded', color: Colors.white30),),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Center(
+              child: Text(
+                'PAGE #$_currentIndex',
+                style: const TextStyle(fontSize: 24, color: Colors.white, fontFamily: 'Unbounded'),
+              ),
+            ),
+          ),
+        ],
       ),
-      body: Text('TEST', style: TextStyle(color: Colors.purpleAccent, fontSize: 32, fontFamily: 'Unbounded')),
-      // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        iconSize: 36,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon:  Icon(Icons.home_rounded),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.grid_view_rounded, size: 28),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search_rounded, size: 28),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline, size: 28),
+            label: '',
+          ),
+        ],
+        currentIndex: _currentIndex,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
