@@ -38,29 +38,23 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  final List<Widget> _pages = const [
+    HomePage(),
+    CategoriesPage(),
+    SearchPage(),
+    ProfilePage(),
+  ];
 
-    @override
+
+  @override
     Widget build(BuildContext context) {
       return Scaffold(
         backgroundColor: const Color.fromRGBO(1, 23, 25, 1),
-          body:
-          Center(
-              child: () {
-                if (_currentPage == 0) {
-                  return const HomePage();
-                } else if (_currentPage == 1) {
-                  return const CategoriesPage();
-                } else if (_currentPage == 2) {
-                  return const SearchPage();
-                } else if (_currentPage == 3) {
-                  return const ProfilePage();
-                } else {
-                  throw ErrorDescription('Wrong index for conditional routing');
-                }
-              }()
+          body: IndexedStack(
+            index: _currentPage,
+            children: _pages,
           ),
           bottomNavigationBar: Navbar(updatePage: _updatePage,)
-
       );
     }
   }
