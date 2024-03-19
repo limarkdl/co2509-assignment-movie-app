@@ -1,8 +1,4 @@
-import 'package:co2509_assignment_movie_app/components/navbar.component.dart';
-import 'package:co2509_assignment_movie_app/pages/categories.page.dart';
-import 'package:co2509_assignment_movie_app/pages/home.page.dart';
-import 'package:co2509_assignment_movie_app/pages/profile.page.dart';
-import 'package:co2509_assignment_movie_app/pages/search.page.dart';
+import 'package:co2509_assignment_movie_app/pages/index.dart';
 import 'package:flutter/material.dart';
 
 void main() {

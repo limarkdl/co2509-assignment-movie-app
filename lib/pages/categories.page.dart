@@ -10,6 +10,6 @@ class CategoriesPage extends StatefulWidget {
 class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: const Text('Categories Page'));
+    return const Center(child: Text('Categories Page'));
   }
 }

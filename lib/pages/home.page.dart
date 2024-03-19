@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         Container(
           child: CategoryBar(updateData: _updateData),
         ),
-        Expanded(
+        const Expanded(
           child: Movie_Grid()
         ),
       ],

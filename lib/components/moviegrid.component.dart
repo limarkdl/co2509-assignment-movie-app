@@ -17,7 +17,7 @@ class _Movie_GridState extends State<Movie_Grid> {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            SizedBox(
+            const SizedBox(
                 height: 15
             ),
             Row(
@@ -46,7 +46,7 @@ class _Movie_GridState extends State<Movie_Grid> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -76,7 +76,7 @@ class _Movie_GridState extends State<Movie_Grid> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -106,7 +106,7 @@ class _Movie_GridState extends State<Movie_Grid> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -136,7 +136,7 @@ class _Movie_GridState extends State<Movie_Grid> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -166,7 +166,7 @@ class _Movie_GridState extends State<Movie_Grid> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -196,7 +196,7 @@ class _Movie_GridState extends State<Movie_Grid> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
           ],

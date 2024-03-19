@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'logo.component.dart';
 
 class CategoryBar extends StatefulWidget {
-  CategoryBar({required this.updateData});
+  const CategoryBar({super.key, required this.updateData});
 
   final Function(String) updateData;
 
@@ -30,13 +30,13 @@ class _CategoryBarState extends State<CategoryBar> {
       height: 70,
       child: ListView(
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           children:   <Widget>[
             const Align(
                 alignment: Alignment.center,
                 child: Logo()
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Align(
               alignment: Alignment.center,
               child:
@@ -53,7 +53,7 @@ class _CategoryBarState extends State<CategoryBar> {
                 ),
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Align(
               alignment: Alignment.center,
               child:
@@ -70,7 +70,7 @@ class _CategoryBarState extends State<CategoryBar> {
                 ),
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Align(
               alignment: Alignment.center,
               child:
@@ -87,7 +87,7 @@ class _CategoryBarState extends State<CategoryBar> {
                 ),
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Align(
               alignment: Alignment.center,
               child:

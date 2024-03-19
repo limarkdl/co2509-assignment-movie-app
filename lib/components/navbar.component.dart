@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 
 class Navbar extends StatefulWidget {
-  Navbar({required this.updatePage});
+  const Navbar({super.key, required this.updatePage});
 
 
   final Function(int) updatePage;
@@ -31,10 +31,10 @@ class _NavbarState extends State<Navbar> {
       showUnselectedLabels: false,
       iconSize: 32,
       enableFeedback: true,
-      backgroundColor: Color.fromRGBO(3, 51, 56, 1),
+      backgroundColor: const Color.fromRGBO(3, 51, 56, 1),
       // selectedItemColor: Color.fromRGBO(13, 205, 225, 1),
-      selectedItemColor: Color.fromRGBO(255, 255, 255, 1),
-      unselectedItemColor: Color.fromRGBO(122, 177, 183, 1),
+      selectedItemColor: const Color.fromRGBO(255, 255, 255, 1),
+      unselectedItemColor: const Color.fromRGBO(122, 177, 183, 1),
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           backgroundColor: Color.fromRGBO(3, 51, 56, 1),
