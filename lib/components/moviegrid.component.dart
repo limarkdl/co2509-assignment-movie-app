@@ -1,4 +1,6 @@
+import 'package:co2509_assignment_movie_app/components/moviegrid.tile.component.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class Movie_Grid extends StatefulWidget {
   const Movie_Grid({super.key});
@@ -9,198 +11,88 @@ class Movie_Grid extends StatefulWidget {
 
 class _Movie_GridState extends State<Movie_Grid> {
 
-  static const String _currentMode = 'FOR YOU';
+
+   String _currentMode = 'FOR YOU';
+
+   void _updateMode(String newMode) {
+     setState(() {
+       _currentMode = newMode;
+     });
+   }
+
+   List<StaggeredGridTile> items =  [
+     StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),
+     StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),
+     StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),StaggeredGridTile.count(
+       crossAxisCellCount: 1,
+       mainAxisCellCount: 1,
+       child: MovieTile(title: 'TED', rating: 10),
+     ),
+
+   ];
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: ListView(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(20),
           scrollDirection: Axis.vertical,
-          children: [
-            const SizedBox(
-                height: 15
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:[
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                  height: 200,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(12.0),),
-                ),
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.blueGrey,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:[
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.lightGreen,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                  height: 200,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:[
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.lightGreen,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                  height: 200,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:[
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.lightGreen,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                  height: 200,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:[
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.lightGreen,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                  height: 200,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:[
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                    height: 200,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.lightGreen,
-                      borderRadius: BorderRadius.circular(12.0),)
-                ),
-                Container(
-                  height: 200,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
-        )
+          child:
+          StaggeredGrid.count(
+            crossAxisCount:(MediaQuery.of(context).size.width ~/ 150).toInt(),
+            crossAxisSpacing: 5,
+            mainAxisSpacing: 5,
+          children: items,
+        ))
     );
   }
 }

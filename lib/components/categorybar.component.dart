@@ -26,84 +26,94 @@ class _CategoryBarState extends State<CategoryBar> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 70,
-      child: ListView(
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.all(10),
-          children:   <Widget>[
-            const Align(
-                alignment: Alignment.center,
-                child: Logo()
-            ),
-            const SizedBox(width: 20),
-            Align(
-              alignment: Alignment.center,
-              child:
-              InkWell(
-                onTap: () {
-                  _onListBoxTapped(0);
-                  },
-                child: Text(
-                    'FOR YOU',
-                    style: TextStyle(
-                        fontSize: _currentIndexForBar == 0 ? 24 : 16,
-                        color: _currentIndexForBar == 0 ? Colors.white : Colors.white30,
-                        fontFamily: 'Unbounded')
+    return Container(
+        decoration: const BoxDecoration(
+          color: Color.fromRGBO(3, 51, 56, 1),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15.0),
+              bottomRight: Radius.circular(15.0)
+          ),
+        ),
+        child: SizedBox(
+        height: 70,
+        child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.all(10),
+              children:   <Widget>[
+                const Align(
+                    alignment: Alignment.center,
+                    child: Logo()
                 ),
-              ),
-            ),
-            const SizedBox(width: 20),
-            Align(
-              alignment: Alignment.center,
-              child:
-              InkWell(
-                onTap: () {
-                  _onListBoxTapped(1);
-                  },
-                child: Text(
-                    'Watching Now',
-                    style: TextStyle(
-                        fontSize: _currentIndexForBar == 1 ? 24 : 16,
-                        fontFamily: 'Unbounded',
-                        color: _currentIndexForBar == 1 ? Colors.white : Colors.white30)
+                const SizedBox(width: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child:
+                  InkWell(
+                    onTap: () {
+                      _onListBoxTapped(0);
+                      },
+                    child: Text(
+                        'FOR YOU',
+                        style: TextStyle(
+                            fontSize: _currentIndexForBar == 0 ? 24 : 16,
+                            color: _currentIndexForBar == 0 ? Colors.white : Colors.white30,
+                            fontFamily: 'Unbounded')
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            const SizedBox(width: 20),
-            Align(
-              alignment: Alignment.center,
-              child:
-              InkWell(
-                onTap: () {
-                  _onListBoxTapped(2);
-                  },
-                child: Text(
-                    'New',
-                    style: TextStyle(
-                        fontSize: _currentIndexForBar == 2 ? 24 : 16,
-                        fontFamily: 'Unbounded',
-                        color: _currentIndexForBar == 2 ? Colors.white : Colors.white30)
+                const SizedBox(width: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child:
+                  InkWell(
+                    onTap: () {
+                      _onListBoxTapped(1);
+                      },
+                    child: Text(
+                        'Watching Now',
+                        style: TextStyle(
+                            fontSize: _currentIndexForBar == 1 ? 24 : 16,
+                            fontFamily: 'Unbounded',
+                            color: _currentIndexForBar == 1 ? Colors.white : Colors.white30)
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            const SizedBox(width: 20),
-            Align(
-              alignment: Alignment.center,
-              child:
-              InkWell(onTap: () {
-                _onListBoxTapped(3);
-                },
-                child: Text(
-                    'TOP-250',
-                    style: TextStyle(
-                        fontSize: _currentIndexForBar == 3 ? 24 : 16,
-                        fontFamily: 'Unbounded',
-                        color: _currentIndexForBar == 3 ? Colors.white : Colors.white30)
+                const SizedBox(width: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child:
+                  InkWell(
+                    onTap: () {
+                      _onListBoxTapped(2);
+                      },
+                    child: Text(
+                        'New',
+                        style: TextStyle(
+                            fontSize: _currentIndexForBar == 2 ? 24 : 16,
+                            fontFamily: 'Unbounded',
+                            color: _currentIndexForBar == 2 ? Colors.white : Colors.white30)
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ],
+                const SizedBox(width: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child:
+                  InkWell(onTap: () {
+                    _onListBoxTapped(3);
+                    },
+                    child: Text(
+                        'TOP-250',
+                        style: TextStyle(
+                            fontSize: _currentIndexForBar == 3 ? 24 : 16,
+                            fontFamily: 'Unbounded',
+                            color: _currentIndexForBar == 3 ? Colors.white : Colors.white30)
+                    ),
+                  ),
+                ),
+              ],
+          ),
+
       ),
     );
   }

@@ -1,4 +1,8 @@
+import 'package:co2509_assignment_movie_app/components/searchasset.component.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
+
+import '../components/logo.component.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -8,8 +12,24 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
+  // TODO: 'Make a debounce handler for search requests'
+
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('Search Page'));
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(12.0),
+            child:  SearchBar(
+              hintText: 'Search through millions of movies...',
+              leading: Container(
+                padding: const EdgeInsets.all(5.0),
+                  child: const Icon(TablerIcons.search)
+              ),
+          ),
+        ),
+        Expanded(child: SearchAsset())
+      ],
+    );
   }
 }

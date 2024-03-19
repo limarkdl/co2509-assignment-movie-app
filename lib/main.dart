@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Movie Shark',
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+        fontFamily: 'Unbounded',
+      ),
       home: const MyHomePage(),
     );
   }
