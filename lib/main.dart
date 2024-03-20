@@ -1,23 +1,31 @@
 import 'package:co2509_assignment_movie_app/pages/index.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
-  runApp(const MyApp());
 
+Future main() async {
+  await dotenv.load(fileName: ".env");
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Movie Shark',
-      theme: ThemeData.dark(),
-      home: const MyHomePage(),
+    final apiKey = dotenv.env['TMDB_API_KEY'] ?? "default_api_key";
+    final apiReadAccessToken = dotenv.env['TMDB_API_READ_ACCESS_TOKEN'] ?? "default_read_access_token";
+    print(apiKey);
+    return Provider<TMDB>(
+      create: (context) => TMDB(
+        ApiKeys(apiKey, apiReadAccessToken),
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true),
+      ),
+      child: MaterialApp(
+        title: 'Movie Shark',
+        theme: ThemeData.dark(),
+        home: const MyHomePage(),
+      ),
     );
   }
 }
@@ -38,24 +46,22 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  final List<Widget> _pages =  [
+  final List<Widget> _pages = [
     HomePage(),
     CategoriesPage(),
     SearchPage(),
     ProfilePage(),
   ];
 
-
   @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-        backgroundColor: const Color.fromRGBO(1, 23, 25, 1),
-          body: IndexedStack(
-            index: _currentPage,
-            children: _pages,
-          ),
-          bottomNavigationBar: Navbar(updatePage: _updatePage,)
-      );
-    }
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromRGBO(1, 23, 25, 1),
+      body: IndexedStack(
+        index: _currentPage,
+        children: _pages,
+      ),
+      bottomNavigationBar: Navbar(updatePage: _updatePage,),
+    );
   }
-
+}

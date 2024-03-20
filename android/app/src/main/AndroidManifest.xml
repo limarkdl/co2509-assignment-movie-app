@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.co2509_assignment_movie_app">
+    package="com.limarkdl.tmdb_uclan">
    <application
-        android:label="co2509_assignment_movie_app"
+        android:label="TMBD UCLan"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

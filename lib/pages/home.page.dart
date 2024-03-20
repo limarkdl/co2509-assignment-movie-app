@@ -1,5 +1,8 @@
 import 'package:co2509_assignment_movie_app/components/category_bar.component.dart';
+import 'package:co2509_assignment_movie_app/skeletons/moviegrid.skeleton.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
 import '../components/movie_grid.component.dart';
@@ -13,19 +16,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String _data = 'FOR YOU';
-  late final TMDB tmdbWithCustomLogs;
+  String _data = 'Trending';
+  late TMDB tmdb;
+
 
   @override
   void initState() {
     super.initState();
-    tmdbWithCustomLogs = TMDB(
-      ApiKeys('API_KEY', 'your_api_read_access_token'),
-      logConfig: const ConfigLogger(
-        showLogs: true,
-        showErrorLogs: true,
-      ),
-    );
+    tmdb = Provider.of<TMDB>(context, listen: false);
   }
 
 
@@ -38,31 +36,32 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(1, 23, 25, 1),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           CategoryBar(updateData: _updateData),
           Expanded(
             child: FutureBuilder<Map>(
-              future: tmdbWithCustomLogs.v3.trending.getTrending(page: 1, timeWindow: TimeWindow.day),
+              future: tmdb.v3.trending.getTrending(page: 1),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator());
+                  return Movie_Grid_Skeleton();
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 } else if (snapshot.hasData) {
+                  print('RENDERED!');
                   final List results = snapshot.data?['results'] ?? [];
                   final List<Movie> movies = results.map((e) =>
                       Movie.fromJson(e)).toList();
-
                   return ListView(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: MovieGrid(movies: movies),
-                      ),
-                    ],
-                  );
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: MovieGrid(movies: movies),
+                        ),
+                      ],
+                    );
                 } else {
                   return const Text('No data');
                 }
