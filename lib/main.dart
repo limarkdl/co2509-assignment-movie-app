@@ -1,20 +1,22 @@
 import 'package:co2509_assignment_movie_app/pages/index.dart';
 import 'package:flutter/material.dart';
+import 'package:tmdb_api/tmdb_api.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() {
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Movie Shark',
-      theme: ThemeData(
-        fontFamily: 'Unbounded',
-      ),
+      theme: ThemeData.dark(),
       home: const MyHomePage(),
     );
   }
@@ -36,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  final List<Widget> _pages = const [
+  final List<Widget> _pages =  [
     HomePage(),
     CategoriesPage(),
     SearchPage(),

@@ -39,6 +39,9 @@ dependencies:
   flutter_tabler_icons: ^1.20.0
   location: ^5.0.3
   flutter_staggered_grid_view: ^0.7.0
+  responsive_grid: ^2.4.4
+  tmdb_api: ^2.2.0
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -58,10 +61,12 @@ dev_dependencies:
 flutter:
 
   assets:
-    - assets/Logo.png
+    - assets/logo.png
     - assets/icons/
-    - assets/SearchPage.png
-    - assets/TED_poster.png
+    - assets/search_page.png
+    - assets/ted_poster.png
+    - assets/pulp_fiction.png
+    - assets/avengers.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

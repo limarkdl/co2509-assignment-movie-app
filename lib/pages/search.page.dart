@@ -1,8 +1,6 @@
-import 'package:co2509_assignment_movie_app/components/searchasset.component.dart';
+import 'package:co2509_assignment_movie_app/components/search_asset.component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
-
-import '../components/logo.component.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
