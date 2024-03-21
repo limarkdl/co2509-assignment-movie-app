@@ -7,6 +7,6 @@ class CategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Category');
+    return const Text('Category tile');
   }
 }

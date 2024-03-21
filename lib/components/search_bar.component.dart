@@ -7,6 +7,8 @@ class SearchBar extends StatefulWidget {
   State<SearchBar> createState() => _SearchBarState();
 }
 
+// TODO: 'Implement searching algorithm'
+// TODO: 'Implement debouncer'
 class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {

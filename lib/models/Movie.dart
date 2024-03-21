@@ -1,4 +1,3 @@
-
 class Movie {
   final String title;
   final String releaseDate;
@@ -22,6 +21,8 @@ class Movie {
     double voteAverage = json['vote_average'].toDouble();
     String correctedRating = voteAverage.toStringAsFixed(1);
 
+
+    // TODO: 'Make sure that it's safe and not-nullable'
     return Movie(
         title: json['title'] ?? json['name'],
         releaseDate: json['release_date'] ?? json['first_air_date'],

@@ -2,7 +2,6 @@ import 'package:co2509_assignment_movie_app/models/Category.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
-import 'movie_tile.component.dart';
 
 class CategoryGrid extends StatefulWidget {
   const CategoryGrid({super.key, required this.categories});
@@ -21,7 +20,7 @@ class _CategoryGridState extends State<CategoryGrid> {
           xs: 6,
           md: 3,
           lg: 2,
-          child: Text('test')
+          child: Text('Category Grid')
         );
       }).toList(),
     );

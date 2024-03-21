@@ -10,9 +10,11 @@ Future main() async {
   runApp(MyApp());
 }
 
+// TODO: 'Implement movie page for displaying movie's info'
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // TODO: 'Separate this initialization into another directory for TMDB'
     final apiKey = dotenv.env['TMDB_API_KEY'] ?? "default_api_key";
     final apiReadAccessToken = dotenv.env['TMDB_API_READ_ACCESS_TOKEN'] ?? "default_read_access_token";
     return Provider<TMDB>(
@@ -53,6 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+
+  // TODO: 'Extend pages list, add subpages'
   final List<Widget> _pages = [
     HomePage(),
     CategoriesPage(),
