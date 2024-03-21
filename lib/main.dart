@@ -4,6 +4,9 @@ import 'package:provider/provider.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+// TODO: 'Make internationalization using 'intl' library, that one is very powerful, like i18n'
+
+
 
 Future main() async {
   await dotenv.load(fileName: ".env");

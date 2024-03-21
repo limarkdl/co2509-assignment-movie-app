@@ -5,7 +5,7 @@ class SearchAsset extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Image(image: AssetImage('assets/search_page.png'), width: double.infinity, height: 500, fit: BoxFit.fitHeight,);
+    return const Image(image: AssetImage('assets/logo.png'), width: double.infinity, height: 500, fit: BoxFit.fitHeight,);
   }
 }
 

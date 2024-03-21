@@ -21,12 +21,15 @@ class _HomePageState extends State<HomePage> {
   final List<Movie> _movies = [];
   final ScrollController _scrollController = ScrollController();
 
+  
+  
   @override
   void initState() {
     super.initState();
     tmdb = Provider.of<TMDB>(context, listen: false);
     _scrollController.addListener(_onScroll);
     _fetchData();
+
   }
 
   @override
@@ -62,7 +65,7 @@ class _HomePageState extends State<HomePage> {
           _movies.addAll(fetchedMovies);
           _currentPage++;
         });
-        print(results);
+        
 
       } catch (e) {
         print(e);
