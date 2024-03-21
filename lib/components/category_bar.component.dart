@@ -25,7 +25,6 @@ class _CategoryBarState extends State<CategoryBar> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Color.fromRGBO(3, 51, 56, 1),
         borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(15.0),
             bottomRight: Radius.circular(15.0)),

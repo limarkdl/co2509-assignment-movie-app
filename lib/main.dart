@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final apiKey = dotenv.env['TMDB_API_KEY'] ?? "default_api_key";
     final apiReadAccessToken = dotenv.env['TMDB_API_READ_ACCESS_TOKEN'] ?? "default_read_access_token";
-    print(apiKey);
     return Provider<TMDB>(
       create: (context) => TMDB(
         ApiKeys(apiKey, apiReadAccessToken),
@@ -23,7 +22,15 @@ class MyApp extends StatelessWidget {
       ),
       child: MaterialApp(
         title: 'Movie Shark',
-        theme: ThemeData.dark(),
+        theme: ThemeData.dark().copyWith(
+          textTheme: ThemeData.dark().textTheme.apply(
+            fontFamily: 'Unbounded',
+          ),
+          primaryTextTheme: ThemeData.dark().primaryTextTheme.apply(
+            fontFamily: 'Unbounded',
+          ),
+
+        ),
         home: const MyHomePage(),
       ),
     );
@@ -57,9 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(1, 23, 25, 1),
-      body: IndexedStack(
-        index: _currentPage,
-        children: _pages,
+      body: SafeArea(
+        child: IndexedStack(
+          index: _currentPage,
+          children: _pages,
+        ),
       ),
       bottomNavigationBar: Navbar(updatePage: _updatePage,),
     );

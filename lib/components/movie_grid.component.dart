@@ -1,7 +1,6 @@
 import 'package:co2509_assignment_movie_app/components/movie_tile.component.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_grid/responsive_grid.dart';
-import 'package:tmdb_api/tmdb_api.dart';
 import '../models/Movie.dart';
 
 class MovieGrid extends StatefulWidget {
