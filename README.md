@@ -1,4 +1,4 @@
-# CO2509: Flutter Movie Catalogue App
+# PET: Flutter Movie App
 
 ![Frame 26(1)](https://github.com/limarkdl/co2509-assignment-movie-app/assets/116545670/a1356907-7f0f-4f99-97dc-5ffce691d4f9)
 
