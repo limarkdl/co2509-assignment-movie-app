@@ -3,7 +3,7 @@
 ![Frame 26(1)](https://github.com/limarkdl/co2509-assignment-movie-app/assets/116545670/a1356907-7f0f-4f99-97dc-5ffce691d4f9)
 
 
-This is the assignment for CO2509: Mobile Computing where I'm supposed to develop a Flutter application and its design from the scratch, with TMDB (The Movie DataBase) integration using their API. I'm using/going to use such libraries: dio (http requests), ant design (UI), 'battery', 'flutter_test', 'geolocator', 'redux', 'animations', etc. (may be expanded)
+This is my pet project where I'm supposed to develop a Flutter application and its design from the scratch, with TMDB (The Movie DataBase) integration using their API. I'm using/going to use such libraries: dio (http requests), ant design (UI), 'battery', 'flutter_test', 'geolocator', 'redux', 'animations', etc. (may be expanded)
 
 ## Prototyping / Designing
 
